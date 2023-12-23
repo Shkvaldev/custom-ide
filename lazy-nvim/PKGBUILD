@@ -1,0 +1,18 @@
+# Maintainer: ZaShkval
+
+pkgname=lazy-nvim
+pkgrel=1
+pkgver=10.15.1
+pkgdesc="A modern plugin manager for Neovim."
+arch=("any")
+url="https://github.com/folke/lazy.nvim"
+license=("Apache")
+depends=("neovim")
+source=("lazy.nvim-10.15.1.tar.xz")
+sha256sums=("SKIP")
+
+package() {
+    cd "lazy.nvim-10.15.1"
+    find doc lua -type f -exec install -Dm 644 "{}" "${pkgdir}/usr/share/nvim/site/pack/lazy/start/lazy.nvim/{}" \;
+    install -Dm 666 /dev/null "${pkgdir}/usr/share/nvim/site/pack/lazy/start/lazy.nvim/doc/tags"
+}

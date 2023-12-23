@@ -1,0 +1,24 @@
+# Maintainer: ZaShkval
+
+pkgname=neovim-custom
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Custom neovim setup with lazy.nvim and plugins"
+arch=("any")
+url="https://github.com/folke/lazy.nvim"
+license=("GPL3")
+depends=('neovim' 'lazy-nvim')
+source=("configs.tar.gz")
+sha256sums=("SKIP")
+
+package() {
+	mkdir -p ${pkgsrc}/home/user/.config/nvim
+	cp configs/init.lua ${pkgsrc}/home/user/.config/nvim
+	echo $(ls ${pkgsrc}/home/user/.config/nvim)
+    #for user in $(ls /home)
+    #	do
+    #	mkdir -p /home/$user/.config/nvim
+    #	cp configs/init.lua /home/$user/.config/nvim
+    #	echo "[*] Installed for $user"
+    #	done
+}
