@@ -8,17 +8,12 @@ arch=("any")
 url="https://github.com/folke/lazy.nvim"
 license=("GPL3")
 depends=('neovim' 'lazy-nvim')
-source=("configs.tar.gz")
+source=("configs.tar.xz")
+install=setup.install
 sha256sums=("SKIP")
 
 package() {
-	mkdir -p ${pkgsrc}/home/user/.config/nvim
-	cp configs/init.lua ${pkgsrc}/home/user/.config/nvim
-	echo $(ls ${pkgsrc}/home/user/.config/nvim)
-    #for user in $(ls /home)
-    #	do
-    #	mkdir -p /home/$user/.config/nvim
-    #	cp configs/init.lua /home/$user/.config/nvim
-    #	echo "[*] Installed for $user"
-    #	done
+	echo "[*] Installing ..."
+    mkdir -p ${pkgdir}/usr/share/neovim-custom
+    cp -r configs/* ${pkgdir}/usr/share/neovim-custom
 }
