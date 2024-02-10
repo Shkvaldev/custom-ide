@@ -3,6 +3,9 @@ _*Custom setup of neovim with lazy.nvim*_
 **Usage:**
 ```shell
 :ToggleTerm # for running terminal
+:Neotree # for running file manager
+:MarkdownPreview # for starting the markdown preview
+:MarkdownPreviewStop # for stopping the preview"
 ```
 
 **Current list of plugins:**
@@ -13,6 +16,7 @@ _*Custom setup of neovim with lazy.nvim*_
 - _neo-tree.nvim (nvim-neo-tree/neo-tree.nvim)_
 - _toggleterm.nvim (akinsho/toggleterm.nvim)_
 - _barbar.nvim (romgrk/barbar.nvim)_
+- _markdown-preview.nvim (iamcco/markdown-preview.nvim)_
 
 TODO:
 - Setup keymaps

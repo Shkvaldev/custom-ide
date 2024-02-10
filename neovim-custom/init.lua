@@ -51,6 +51,12 @@ local plugins = {
     		},
 
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
+	},
 }
 
 local opts = {}
@@ -60,5 +66,4 @@ require("lazy").setup(plugins, opts)
 require("toggleterm").setup()
 
 vim.cmd(":set number")
-vim.cmd(":Neotree")
 vim.cmd(":set modifiable")

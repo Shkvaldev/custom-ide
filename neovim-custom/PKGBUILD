@@ -1,19 +1,22 @@
 # Maintainer: ZaShkval
 
 pkgname=neovim-custom
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 pkgdesc="Custom neovim setup with lazy.nvim and plugins"
 arch=("any")
 url="https://github.com/folke/lazy.nvim"
 license=("GPL3")
-depends=('neovim' 'lazy-nvim')
-source=("configs.tar.xz")
+depends=('neovim')
+noextract=("init.lua")
 install=setup.install
-sha256sums=("SKIP")
+
+build() {
+    cd ../lazy-nvim && makepkg -si
+}
 
 package() {
 	echo "[*] Installing ..."
     mkdir -p ${pkgdir}/usr/share/neovim-custom
-    cp -r configs/* ${pkgdir}/usr/share/neovim-custom
+    cp -r ../init.lua ${pkgdir}/usr/share/neovim-custom
 }
