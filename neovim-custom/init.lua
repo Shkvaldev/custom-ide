@@ -57,12 +57,17 @@ local plugins = {
 		ft = { "markdown" },
 		build = function() vim.fn["mkdp#util#install"]() end,
 	},
+	{
+		"neovim/nvim-lspconfig",
+	},
 }
 
 local opts = {}
 
 require("lazy").setup(plugins, opts)
 
+require("nvim-web-devicons")
+require("lspconfig").pyright.setup{}
 require("toggleterm").setup()
 
 vim.cmd(":set number")

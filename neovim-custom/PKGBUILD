@@ -1,7 +1,7 @@
 # Maintainer: ZaShkval
 
 pkgname=neovim-custom
-pkgver=0.0.2
+pkgver=0.2.2
 pkgrel=1
 pkgdesc="Custom neovim setup with lazy.nvim and plugins"
 arch=("any")
